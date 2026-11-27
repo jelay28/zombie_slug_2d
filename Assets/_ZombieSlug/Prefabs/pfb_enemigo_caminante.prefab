@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4049609533278528956
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3334637196548320252, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_Name
+      value: pfb_enemigo_caminante
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3334637196548320252, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5850025791647579593}
+  m_SourcePrefab: {fileID: 100100000, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+--- !u!1 &1617945340341325376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3334637196548320252, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+  m_PrefabInstance: {fileID: 4049609533278528956}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5850025791647579593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617945340341325376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac21cb9f28b313468d32c2261f1d09a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieSlug.EnemyBase
+  vidaBase: 3
+  velocidad: 1.2
+  danoContacto: 10
+  puntos: 10
+  intervaloGolpe: 1
+  resistenciaEmpuje: 0
+  dibujo: {fileID: 7590549744580916505}
+--- !u!212 &7590549744580916505 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5864837545312342181, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+  m_PrefabInstance: {fileID: 4049609533278528956}
+  m_PrefabAsset: {fileID: 0}

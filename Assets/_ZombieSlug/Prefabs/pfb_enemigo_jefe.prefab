@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6695799681290368335
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3334637196548320252, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_Name
+      value: pfb_enemigo_jefe
+      objectReference: {fileID: 0}
+    - target: {fileID: 3429996054885856895, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7249999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3429996054885856895, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_Size.y
+      value: 3.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 3429996054885856895, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.978
+      objectReference: {fileID: 0}
+    - target: {fileID: 4574903257762145323, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 70d720b63f14f06488b22308eba75459, type: 2}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6532277599491821673, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627509564267823413, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_Size.x
+      value: 2.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627509564267823413, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_Size.y
+      value: 3.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627509564267823413, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.955
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3334637196548320252, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7884198854634201889}
+  m_SourcePrefab: {fileID: 100100000, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+--- !u!212 &975122747947165162 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5864837545312342181, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+  m_PrefabInstance: {fileID: 6695799681290368335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8262768899593690803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3334637196548320252, guid: 9f323bca0f84a9b4c9e13f900d9d23ff, type: 3}
+  m_PrefabInstance: {fileID: 6695799681290368335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7884198854634201889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262768899593690803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919ada9994412b14c99bfc3d2fe0ceff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieSlug.BossController
+  vidaBase: 60
+  velocidad: 1
+  danoContacto: 30
+  puntos: 150
+  intervaloGolpe: 1
+  resistenciaEmpuje: 0.9
+  dibujo: {fileID: 975122747947165162}
+  segundosCaminar: 3
+  segundosAviso: 1
+  segundosEmbestida: 1.2
+  multiplicadorEmbestida: 4
+  colorAviso: {r: 1, g: 0.25, b: 0.25, a: 1}

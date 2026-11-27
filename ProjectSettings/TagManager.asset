@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Enemigo
+  - Tablero
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Jugador
+  - Enemigo
+  - EnemigoGolpe
+  - Proyectil
+  - Suelo
+  - Plataforma
+  - Hacha
+  - Tablero
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Fondo
+    uniqueID: 35744752
+    locked: 0
+  - name: Escenario
+    uniqueID: 17168607
+    locked: 0
+  - name: Personajes
+    uniqueID: 52296232
+    locked: 0
+  - name: Proyectiles
+    uniqueID: 37034159
+    locked: 0
+  - name: PrimerPlano
+    uniqueID: 71010497
+    locked: 0
+  m_RenderingLayers:
+  - Default
