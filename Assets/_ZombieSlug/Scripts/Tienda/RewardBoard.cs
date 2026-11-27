@@ -6,6 +6,8 @@
 // también se deshabilita el Collider2D; el objeto queda activo para que el
 // tablero se siga viendo (desactivarlo lo haría desaparecer de la arena).
 // R-26: E cerca del tablero (y en estado Tienda) abre el panel de compra.
+// Desde el 26/11 avisa por eventos (AyudaTablero, TiendaVisible): la Tienda ya
+// no depende de la Interfaz; solo la Interfaz depende de la Tienda.
 // -----------------------------------------------------------------------------
 using UnityEngine;
 
@@ -15,7 +17,6 @@ namespace ZombieSlug
     {
         [SerializeField] private Collider2D zona;
         [SerializeField] private SpriteRenderer luz;        // indicador "abierto"
-        [SerializeField] private UIManager interfaz;
 
         private bool jugadorCerca;
 
@@ -29,27 +30,27 @@ namespace ZombieSlug
             enabled = si;
             zona.enabled = si;
             if (luz != null) luz.enabled = si;
-            if (!si) { jugadorCerca = false; if (interfaz != null) interfaz.MostrarAyudaTablero(false); }
+            if (!si) { jugadorCerca = false; GameEvents.RaiseAyudaTablero(false); }
         }
 
         private void OnTriggerEnter2D(Collider2D otro)
         {
             if (!enabled || !otro.CompareTag("Player")) return;
             jugadorCerca = true;
-            interfaz.MostrarAyudaTablero(true);
+            GameEvents.RaiseAyudaTablero(true);
         }
 
         private void OnTriggerExit2D(Collider2D otro)
         {
             if (!otro.CompareTag("Player")) return;
             jugadorCerca = false;
-            interfaz.MostrarAyudaTablero(false);
-            interfaz.CerrarTienda();
+            GameEvents.RaiseAyudaTablero(false);
+            GameEvents.RaiseTiendaVisible(false);
         }
 
         private void Update()
         {
-            if (jugadorCerca && InputLector.Interactuar()) interfaz.AbrirTienda();
+            if (jugadorCerca && InputLector.Interactuar()) GameEvents.RaiseTiendaVisible(true);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace ZombieSlug
     public static class GameEvents
     {
         // Combate -> Puntaje / Oleadas
-        public static event Action<EnemyBase, bool> EnemigoEliminado;   // enemigo, fue con hacha
+        public static event Action<int, bool> EnemigoEliminado;         // puntos del enemigo, fue con hacha
         // Jugador -> Puntaje / Interfaz
         public static event Action<int, int> SaludCambio;              // salud actual, salud máxima
         public static event Action<int> VidasCambio;                   // vidas extra
@@ -28,8 +28,11 @@ namespace ZombieSlug
         public static event Action<int, int> PuntajeCambio;            // puntos, monedas
         // GameManager -> Interfaz / Tienda
         public static event Action<EstadoJuego> EstadoCambio;
+        // Tienda -> Interfaz (el tablero ya no llama directo al UIManager)
+        public static event Action<bool> AyudaTablero;                 // mostrar u ocultar "E: abrir"
+        public static event Action<bool> TiendaVisible;                // abrir o cerrar el panel
 
-        public static void RaiseEnemigoEliminado(EnemyBase e, bool hacha) { if (EnemigoEliminado != null) EnemigoEliminado(e, hacha); }
+        public static void RaiseEnemigoEliminado(int puntos, bool hacha) { if (EnemigoEliminado != null) EnemigoEliminado(puntos, hacha); }
         public static void RaiseSaludCambio(int actual, int max) { if (SaludCambio != null) SaludCambio(actual, max); }
         public static void RaiseVidasCambio(int vidas) { if (VidasCambio != null) VidasCambio(vidas); }
         public static void RaiseJugadorDanado() { if (JugadorDanado != null) JugadorDanado(); }
@@ -37,6 +40,8 @@ namespace ZombieSlug
         public static void RaiseArmaCambio(string nombre, int municion) { if (ArmaCambio != null) ArmaCambio(nombre, municion); }
         public static void RaiseOleadaIniciada(int n) { if (OleadaIniciada != null) OleadaIniciada(n); }
         public static void RaiseOleadaTerminada(int n, float limpieza) { if (OleadaTerminada != null) OleadaTerminada(n, limpieza); }
+        public static void RaiseAyudaTablero(bool si) { if (AyudaTablero != null) AyudaTablero(si); }
+        public static void RaiseTiendaVisible(bool si) { if (TiendaVisible != null) TiendaVisible(si); }
         public static void RaisePuntajeCambio(int puntos, int monedas) { if (PuntajeCambio != null) PuntajeCambio(puntos, monedas); }
         public static void RaiseEstadoCambio(EstadoJuego e) { if (EstadoCambio != null) EstadoCambio(e); }
     }

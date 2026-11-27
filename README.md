@@ -41,6 +41,8 @@ Tools/generar_placeholders.py   genera los 36 PNG provisionales con sus medidas 
    esté más de 1,5 m por debajo y caen por un borde.
 4. El hacha mataba al caminante antes de que tocara a Ken: retardo de 0,5 s antes del primer tajo.
 5. Sin panel de derrota: `WaitForEndOfFrame` se cambió por esperar al cuadro siguiente.
+6. Dependencias en un solo sentido: interfaz `IDanable` (Combate) y eventos `AyudaTablero` y
+   `TiendaVisible`; se rompieron los ciclos Jugador-Enemigos y Tienda-Interfaz.
 
 ## Arte
 Todo el arte de personajes es provisional (placeholders con las dimensiones finales).

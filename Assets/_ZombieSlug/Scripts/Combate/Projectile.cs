@@ -30,8 +30,8 @@ namespace ZombieSlug
 
         private void OnTriggerEnter2D(Collider2D otro)
         {
-            EnemyBase e = otro.GetComponentInParent<EnemyBase>();
-            if (e != null) { e.RecibirDano(dano, false, empuje); Desactivar(); return; }
+            IDanable e = otro.GetComponentInParent<IDanable>();
+            if (e != null && e.Vivo) { e.RecibirDano(dano, false, empuje); Desactivar(); return; }
             if (otro.gameObject.layer == LayerMask.NameToLayer("Suelo")) Desactivar();
         }
 

@@ -46,10 +46,10 @@ namespace ZombieSlug
         private void AlIniciarOleada(int n) { puntosBaseOleada = 0; recibioDanoEnOleada = false; }
         private void AlRecibirDano() { recibioDanoEnOleada = true; }
 
-        private void AlEliminar(EnemyBase enemigo, bool conHacha)
+        private void AlEliminar(int puntosEnemigo, bool conHacha)
         {
-            int ganados = enemigo.Puntos + (conHacha ? bonoHacha : 0);
-            puntosBaseOleada += enemigo.Puntos;
+            int ganados = puntosEnemigo + (conHacha ? bonoHacha : 0);
+            puntosBaseOleada += puntosEnemigo;
             Sumar(ganados);
         }
 

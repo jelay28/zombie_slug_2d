@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace ZombieSlug
 {
-    public class PlayerHealth : MonoBehaviour
+    public class PlayerHealth : MonoBehaviour, IDanable
     {
         [SerializeField] private int saludMaxima = 100;
         [SerializeField] private int vidasExtraIniciales = 1;
@@ -32,6 +32,12 @@ namespace ZombieSlug
             VidasExtra = vidasExtraIniciales;
             GameEvents.RaiseSaludCambio(Salud, saludMaxima);
             GameEvents.RaiseVidasCambio(VidasExtra);
+        }
+
+        // Puerta de IDanable: los zombis no conocen a PlayerHealth, solo el contrato.
+        public void RecibirDano(float cantidad, bool conHacha, Vector2 empuje)
+        {
+            RecibirDano(Mathf.RoundToInt(cantidad));
         }
 
         public void RecibirDano(int cantidad)

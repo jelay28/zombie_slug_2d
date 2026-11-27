@@ -447,7 +447,7 @@ namespace ZombieSlug.EditorTools
             Set(ken.GetComponent<PlayerShooting>(), "piscinaProyectiles", pPro);
 
             // --- Interfaz
-            var ui = ConstruirInterfaz(shop);
+            ConstruirInterfaz(shop);
 
             // --- Referencias entre sistemas (campos serializados, visibles en el inspector)
             Set(gm, "oleadas", wm); Set(gm, "tablero", tablero.GetComponent<RewardBoard>());
@@ -463,7 +463,6 @@ namespace ZombieSlug.EditorTools
             Set(wm, "jugador", ken.transform);
             Set(wm, "piscinaCaminantes", pCam); Set(wm, "piscinaCorredores", pCor); Set(wm, "piscinaTanques", pTan); Set(wm, "piscinaJefe", pJef);
             Set(wm, "arenas", arenaMgr);
-            Set(tablero.GetComponent<RewardBoard>(), "interfaz", ui);
 
             EditorSceneManager.SaveScene(esc, ruta);
         }

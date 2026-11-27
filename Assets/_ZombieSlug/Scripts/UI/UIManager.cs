@@ -31,13 +31,19 @@ namespace ZombieSlug
         {
             GameEvents.EstadoCambio += AlCambiarEstado;
             GameEvents.OleadaIniciada += AlIniciarOleada;
+            GameEvents.AyudaTablero += MostrarAyudaTablero;
+            GameEvents.TiendaVisible += AlCambiarTienda;
         }
 
         private void OnDisable()
         {
             GameEvents.EstadoCambio -= AlCambiarEstado;
             GameEvents.OleadaIniciada -= AlIniciarOleada;
+            GameEvents.AyudaTablero -= MostrarAyudaTablero;
+            GameEvents.TiendaVisible -= AlCambiarTienda;
         }
+
+        private void AlCambiarTienda(bool abrir) { if (abrir) AbrirTienda(); else CerrarTienda(); }
 
         private void AlCambiarEstado(EstadoJuego e)
         {

@@ -92,7 +92,7 @@ namespace ZombieSlug
             return cola;
         }
 
-        private void AlEliminar(EnemyBase e, bool hacha)
+        private void AlEliminar(int puntos, bool hacha)
         {
             Vivos = Mathf.Max(0, Vivos - 1);
             Comprobar();

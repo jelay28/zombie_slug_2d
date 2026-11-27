@@ -12,7 +12,7 @@ using UnityEngine;
 namespace ZombieSlug
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class EnemyBase : MonoBehaviour
+    public class EnemyBase : MonoBehaviour, IDanable
     {
         [Header("Variables de balance (las redefine cada variante)")]
         [SerializeField] protected float vidaBase = 3f;
@@ -88,7 +88,7 @@ namespace ZombieSlug
         protected virtual void OnTriggerEnter2D(Collider2D otro)
         {
             if (!otro.CompareTag("Player")) return;
-            PlayerHealth ph = otro.GetComponent<PlayerHealth>();
+            IDanable ph = otro.GetComponent<IDanable>();
             if (ph != null && rutinaContacto == null) rutinaContacto = StartCoroutine(Contacto(ph));
         }
 
@@ -98,11 +98,11 @@ namespace ZombieSlug
             if (rutinaContacto != null) { StopCoroutine(rutinaContacto); rutinaContacto = null; }
         }
 
-        private IEnumerator Contacto(PlayerHealth ph)
+        private IEnumerator Contacto(IDanable ph)
         {
             while (Vivo)
             {
-                ph.RecibirDano(danoContacto);
+                ph.RecibirDano(danoContacto, false, Vector2.zero);
                 yield return new WaitForSeconds(intervaloGolpe);
             }
             rutinaContacto = null;
@@ -128,7 +128,7 @@ namespace ZombieSlug
         protected virtual void Morir(bool conHacha)
         {
             Vivo = false;
-            GameEvents.RaiseEnemigoEliminado(this, conHacha);
+            GameEvents.RaiseEnemigoEliminado(puntos, conHacha);
             gameObject.SetActive(false);   // vuelve a la piscina; Destroy generaría basura
         }
     }

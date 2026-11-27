@@ -22,12 +22,12 @@ namespace ZombieSlug
         // levantar el hacha, Ken recibe un golpe antes del primer tajo.
         [SerializeField] private float retardoPrimerGolpe = 0.5f;
 
-        private readonly List<EnemyBase> enRango = new List<EnemyBase>();
+        private readonly List<IDanable> enRango = new List<IDanable>();
         private Coroutine rutina;
 
         private void OnTriggerEnter2D(Collider2D otro)
         {
-            EnemyBase e = otro.GetComponentInParent<EnemyBase>();
+            IDanable e = otro.GetComponentInParent<IDanable>();
             if (e == null || enRango.Contains(e)) return;
             enRango.Add(e);
             if (rutina == null) rutina = StartCoroutine(Golpear());
@@ -35,7 +35,7 @@ namespace ZombieSlug
 
         private void OnTriggerExit2D(Collider2D otro)
         {
-            EnemyBase e = otro.GetComponentInParent<EnemyBase>();
+            IDanable e = otro.GetComponentInParent<IDanable>();
             if (e != null) enRango.Remove(e);
         }
 
@@ -50,12 +50,20 @@ namespace ZombieSlug
             yield return new WaitForSeconds(retardoPrimerGolpe);
             while (enRango.Count > 0)
             {
-                enRango.RemoveAll(x => x == null || !x.gameObject.activeInHierarchy || !x.Vivo);
+                enRango.RemoveAll(x => !Valido(x));
                 if (enRango.Count == 0) break;
                 enRango[0].RecibirDano(dano, true, Vector2.zero);
                 yield return new WaitForSeconds(enfriamiento);
             }
             rutina = null;
+        }
+
+        // Una interfaz no usa el "==" de Unity: se convierte a MonoBehaviour para
+        // detectar objetos destruidos o devueltos a la piscina.
+        private static bool Valido(IDanable x)
+        {
+            MonoBehaviour mb = x as MonoBehaviour;
+            return mb != null && mb.gameObject.activeInHierarchy && x.Vivo;
         }
     }
 }
